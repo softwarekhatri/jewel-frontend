@@ -1,0 +1,230 @@
+/* ─── Order Confirmation Page ────────────────────────────────────────────── */
+.order-confirm-page {
+  padding-top: calc(var(--nav-h) + 40px);
+  padding-bottom: 80px;
+  background: var(--ivory);
+  min-height: 100vh;
+}
+
+.order-confirm {
+  max-width: 680px;
+  margin: 0 auto;
+  animation: fadeUp 0.6s ease both;
+}
+
+/* ── Check circle ── */
+.order-confirm__check {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.order-confirm__check-circle {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-pale);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* SVG checkmark */
+.checkmark-svg {
+  width: 40px;
+  height: 40px;
+}
+
+.checkmark-circle {
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: strokeDash 0.6s 0.2s ease forwards;
+}
+
+.checkmark-path {
+  stroke: var(--gold-dark);
+  stroke-width: 2;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: strokeDash 0.4s 0.7s ease forwards;
+}
+
+@keyframes strokeDash {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Header ── */
+.order-confirm__title {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--ink);
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.order-confirm__subtitle {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.order-confirm__id {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 32px;
+}
+.order-confirm__id strong {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+/* ── Card ── */
+.order-confirm__card {
+  background: var(--white);
+  border: 1px solid var(--stone);
+  padding: 36px;
+  margin-bottom: 24px;
+}
+
+.order-confirm__section-title {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  margin-bottom: 20px;
+}
+
+/* ── Items ── */
+.order-confirm__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.order-confirm__item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--stone);
+}
+.order-confirm__item:last-child { border-bottom: none; }
+
+.order-confirm__item img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border: 1px solid var(--stone);
+}
+
+.order-confirm__item-name {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+.order-confirm__item-meta {
+  font-size: 11px;
+  color: var(--mid);
+  margin-top: 4px;
+}
+
+.order-confirm__item-total {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* ── Summary ── */
+.order-confirm__summary {
+  border-top: 1px solid var(--stone);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-confirm__summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--char);
+}
+
+.order-confirm__total {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* ── Shipping ── */
+.order-confirm__shipping {
+  border-top: 1px solid var(--stone);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+.order-confirm__shipping p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--char);
+  line-height: 1.7;
+}
+
+/* ── Delivery note ── */
+.order-confirm__delivery-note {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1A6B3C;
+  background: #EEF8F1;
+  border: 1px solid #86CFA0;
+  padding: 12px 20px;
+  text-align: center;
+  margin-top: 24px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Actions ── */
+.order-confirm__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .order-confirm__card { padding: 24px 20px; }
+  .order-confirm__actions { flex-direction: column; }
+  .order-confirm__actions .btn { width: 100%; }
+}

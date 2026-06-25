@@ -1,0 +1,5 @@
+/* LoginPage.css — imports shared AuthPages styles + login-specific overrides */
+/* All base styles live in AuthPages.css */
+
+/* Login-specific: nothing extra needed — AuthPages.css covers it all */
+/* Kept for import chain compatibility */
